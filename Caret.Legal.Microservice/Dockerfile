@@ -1,20 +1,20 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
-RUN dotnet restore "WebApplication1/WebApplication1.csproj"
+COPY ["Caret.Legal.Microservice/Caret.Legal.Microservice.csproj", "Caret.Legal.Microservice/"]
+RUN dotnet restore "Caret.Legal.Microservice/Caret.Legal.Microservice.csproj"
 COPY . .
-WORKDIR "/src/WebApplication1"
-RUN dotnet build "WebApplication1.csproj" -c Release -o /app/build
+WORKDIR "/src/Caret.Legal.Microservice"
+RUN dotnet build "Caret.Legal.Microservice.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApplication1.csproj" -c Release -o /app/publish
+RUN dotnet publish "Caret.Legal.Microservice.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApplication1.dll"]
+ENTRYPOINT ["dotnet", "Caret.Legal.Microservice.dll"]

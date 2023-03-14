@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Caret.Legal.WebApplication1.Model;
+namespace Caret.Legal.Microservice.Model;
 
 public class ProcessView
 {

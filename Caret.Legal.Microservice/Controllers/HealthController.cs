@@ -1,9 +1,9 @@
+using System.Diagnostics;
+using Caret.Legal.Microservice.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Caret.Legal.WebApplication1.Model;
 
-namespace Caret.Legal.WebApplication1.Controllers;
+namespace Caret.Legal.Microservice.Controllers;
 
 [ApiController]
 [AllowAnonymous]

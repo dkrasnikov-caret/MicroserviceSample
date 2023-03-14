@@ -1,4 +1,5 @@
 using System.Text;
+using Caret.Legal.Microservice.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -37,6 +38,7 @@ public class Program
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.Services.AddRepositories();
 
     var app = builder.Build();
 

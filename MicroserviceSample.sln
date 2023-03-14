@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caret.Legal.Microservice", "Caret.Legal.Microservice\Caret.Legal.Microservice.csproj", "{CEC7A9F6-9311-4A8B-A216-5E0DA3D03938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caret.Legal.Test.MicroserviceUnit", "Caret.Legal.Test.MicroserviceUnit\Caret.Legal.Test.MicroserviceUnit.csproj", "{61BB7647-1C49-4878-9C8B-6AF051A1012D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{71FFC5D9-9A64-4861-A710-A17594C48E7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEC7A9F6-9311-4A8B-A216-5E0DA3D03938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC7A9F6-9311-4A8B-A216-5E0DA3D03938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC7A9F6-9311-4A8B-A216-5E0DA3D03938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC7A9F6-9311-4A8B-A216-5E0DA3D03938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BB7647-1C49-4878-9C8B-6AF051A1012D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BB7647-1C49-4878-9C8B-6AF051A1012D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BB7647-1C49-4878-9C8B-6AF051A1012D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BB7647-1C49-4878-9C8B-6AF051A1012D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FFC5D9-9A64-4861-A710-A17594C48E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FFC5D9-9A64-4861-A710-A17594C48E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

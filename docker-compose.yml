@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  caret.legal.microservice:
+    image: ${DOCKER_REGISTRY-}caretlegal
+    build:
+      context: .
+      dockerfile: Caret.Legal.Microservice/Dockerfile

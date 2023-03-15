@@ -6,7 +6,7 @@ namespace Caret.Legal.Microservice.Repository.Mongo;
 
 public class ProductRepositoryMongo: IProductRepository
 {
-  protected FilterDefinitionBuilder<Product> FilterBuilder => Builders<Product>.Filter;
+  private FilterDefinitionBuilder<Product> FilterBuilder => Builders<Product>.Filter;
 
   private readonly IMongoCollection<Product> _collection;
 
@@ -34,6 +34,7 @@ public class ProductRepositoryMongo: IProductRepository
   /// <inheritdoc />
   public async ValueTask UpdateAsync(string id, Product product, CancellationToken token)
   {
+    product.Id = id;
     var options = new ReplaceOptions {IsUpsert=false};
     var result = await _collection.ReplaceOneAsync(FilterBuilder.Eq("_id", id), product, options, token);
     if(result.MatchedCount <= 0) throw new FindFailedException(nameof(Product), id);

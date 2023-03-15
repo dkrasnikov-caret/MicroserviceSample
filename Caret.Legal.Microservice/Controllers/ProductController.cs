@@ -62,4 +62,18 @@ public class ProductController : ControllerBase
     await _productRepository.InsertAsync(product, token);
     return Created(product.Id, product);
   }
+
+  [SwaggerOperation("UpdateProduct")]
+  [SwaggerResponse(statusCode: 204)]
+  [SwaggerResponse(statusCode: 400, type: typeof(Api400Response), description: "BadRequest")]
+  [SwaggerResponse(statusCode: 401, description: "AuthenticationError")]
+  [SwaggerResponse(statusCode: 403, description: "AuthorizationError")]
+  [SwaggerResponse(statusCode: 404, description: "NotFoundError")]
+  [SwaggerResponse(statusCode: 500, description: "GenericError")]
+  [HttpPut("{id}", Name = "UpdateProduct")]
+  public async ValueTask<IActionResult> UpdateProduct(string id, Product product, CancellationToken token)
+  {
+    await _productRepository.UpdateAsync(id, product, token);
+    return NoContent();
+  }
 }

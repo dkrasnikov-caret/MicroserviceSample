@@ -13,5 +13,8 @@ services:
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongo
-      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo 
+  caret.legal.redis:
+    image: redis:7
+    restart: unless-stopped
 

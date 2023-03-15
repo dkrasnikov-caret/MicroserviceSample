@@ -1,5 +1,6 @@
 using System.Text;
 using Caret.Legal.Microservice.Repository;
+using Caret.Legal.Microservice.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -38,7 +39,17 @@ public class Program
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+
+    // Adding local repositories to DI
     builder.Services.AddRepositories();
+    // Adding local services to DI
+    builder.Services.AddServices();
+    //Adding Redis distributed cache provider
+    builder.Services.AddStackExchangeRedisCache(options =>
+    {
+      options.Configuration = builder.Configuration.GetConnectionString("Redis");
+      options.InstanceName = "Microservice";
+    });
 
     var app = builder.Build();
 

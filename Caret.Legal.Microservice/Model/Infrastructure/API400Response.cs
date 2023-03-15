@@ -2,11 +2,26 @@ using System.Text.Json.Serialization;
 
 namespace Caret.Legal.Microservice.Model.Infrastructure;
 
+/// <summary>
+///   400 error response.
+/// </summary>
 public class Api400Response
 {
-    [JsonPropertyName("type")]
-    public string? Type { get; set; }
+  /// <summary>
+  ///   Gets or sets the type.
+  /// </summary>
+  /// <value>
+  ///   The type.
+  /// </value>
+  [JsonPropertyName("code")]
+  public int Code { get; set; }
 
-    [JsonPropertyName("message")]
-    public string? Message { get; set; }
+  /// <summary>
+  ///   Gets or sets the message.
+  /// </summary>
+  /// <value>
+  ///   The message.
+  /// </value>
+  [JsonPropertyName("message")]
+  public string? Message { get; set; }
 }

@@ -4,12 +4,17 @@ using Caret.Legal.Microservice.Error;
 
 namespace Caret.Legal.Microservice.Repository.Mongo;
 
+/// <inheritdoc />
 public class ProductRepositoryMongo: IProductRepository
 {
   private FilterDefinitionBuilder<Product> FilterBuilder => Builders<Product>.Filter;
 
   private readonly IMongoCollection<Product> _collection;
 
+  /// <summary>
+  /// Initializes a new instance of the <see cref="ProductRepositoryMongo"/> class.
+  /// </summary>
+  /// <param name="configuration">The configuration.</param>
   public ProductRepositoryMongo(IConfiguration configuration)
   {
     var client = new MongoClient(configuration.GetConnectionString("MongoDb"));
